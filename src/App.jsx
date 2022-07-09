@@ -105,7 +105,7 @@ const App = () => {
         console.log("Retrieved total wave count...", count.toNumber());
 
         //Execute the actual wave from your smart contract
-        const waveTxn = await wavePortalContract.wave();
+        const waveTxn = await wavePortalContract.wave("this is a message");
         console.log("Mining...", waveTxn.hash);
 
         await waveTxn.wait();
@@ -124,6 +124,10 @@ const App = () => {
   //runs the function
   useEffect(() => {
     checkIfWalletIsConnected();
+  }, [])
+
+  useEffect(() => {
+    getAllWaves();
   }, [])
 
   return (
@@ -147,6 +151,15 @@ const App = () => {
         <button className="waveButton" onClick={wave}>
           Send a Wave 👋
         </button>
+
+        {allWaves.map((wave, index) => {
+          return (
+            <div key={index} style={{ backgroundColor: "OldLace", marginTop: "16px", padding: "8px"}}>
+              <div>Addres: {wave.address}</div>
+              <div>Time: {wave.timestamp.toString}</div>
+              <div>Message: {wave.message}</div>
+            </div>)
+        })}
       </div>
     </div>    
   );  

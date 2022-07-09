@@ -9,7 +9,7 @@ const App = () => {
   //stores all waves
   const [allWaves, setAllWaves] = useState([]);
   //stores contract address
-  const contractAddress = "0xAa9F9afe02963cb4Af63bFC13cF5B9ba7A4E8211";
+  const contractAddress = "0xE423fE55ef893aa159b8338c1CF7c28a0D46be07";
   
   //retrieving waves method
   const getAllWaves = async () => {

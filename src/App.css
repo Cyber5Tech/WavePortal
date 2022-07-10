@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   max-width: 600px;
+
 }
 
 .header {
@@ -20,7 +21,7 @@
 
 .bio {
   text-align: center;
-  color: gray;
+  color: black;
   margin-top: 16px;
 }
 
@@ -33,6 +34,6 @@
   
 }
 
-body {
-  backgroung-color: gray;
+body{
+  background-color: gray;
 }
